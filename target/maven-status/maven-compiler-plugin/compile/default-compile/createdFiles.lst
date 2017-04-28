@@ -1,0 +1,5 @@
+config/LoyaltyConfiguration.class
+application/ShopperApplication.class
+controller/LoyaltyController.class
+model/Shopper.class
+repo/ShopperRepository.class
