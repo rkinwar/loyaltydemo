@@ -1,7 +1,5 @@
 .DS_Store
 loyalty.log
-/target/
-loyalty.log
 .settings
 .classpath
 .project
