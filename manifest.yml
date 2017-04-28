@@ -1,0 +1,7 @@
+ applications:
+  - name: loyaltyapp
+    path : target/Loyalty.war
+    buildpack : java_buildpack
+    memory: 64M
+    
+    
