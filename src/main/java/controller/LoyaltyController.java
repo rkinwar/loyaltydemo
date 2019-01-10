@@ -33,17 +33,17 @@ public class LoyaltyController {
 	private ShopperRepository shopperRepository;	
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public @ResponseBody String replySameText(@RequestParam(value = "firstName") String name) {		
+	public @ResponseBody String replySameText(@RequestParam(value = "nickName") String name) {		
 			        return "Hello! Welcome to Spring Boot Sample. " + name.toUpperCase();		
     }	
 	
-	@RequestMapping(method=RequestMethod.POST, value = "/first")
-	public @ResponseBody String myFirstMilestone(@RequestParam(value = "firstName") String name) {	
+	@RequestMapping(method=RequestMethod.POST, value = "/persist")
+	public @ResponseBody String myFirstMilestone(@RequestParam(value = "firstName") String name,@RequestParam(value = "lastName") String lname,@RequestParam(value = "age") int age) {	
 		
 		Shopper shopper = new Shopper();
-		shopper.setAge(22);
+		shopper.setAge(age);
 		shopper.setFirstName(name);
-		shopper.setLastName("king");
+		shopper.setLastName(lname);
 		shopperRepository.save(shopper);		
 		
 		return "Hello Welcome to the shopping " + shopper.getFirstName();		
