@@ -12,6 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import model.Shopper;
 import repo.ShopperRepository;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 /*
  * This is a simple controller to find, save and retrieve shoppers
@@ -33,8 +35,8 @@ public class LoyaltyController {
 	private ShopperRepository shopperRepository;	
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public @ResponseBody String replySameText(@RequestParam(value = "nickName") String name) {		
-			        return "Hello! Welcome to Spring Boot Sample. " + name.toUpperCase();		
+	public @ResponseBody String replySameText(@RequestParam(value = "nickName") String name) throws UnknownHostException {		
+			        return "Hello! Welcome to Spring Boot Sample. " + name.toUpperCase() + "from " + InetAddress.getLocalHost().getHostAddress();		
     }	
 	
 	@RequestMapping(method=RequestMethod.POST, value = "/persist")

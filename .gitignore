@@ -4,3 +4,4 @@ loyalty.log
 .classpath
 .project
 .metadata
+/target/
